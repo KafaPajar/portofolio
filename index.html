@@ -1,18 +1,222 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Kafa Pajar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Kafa Pajar</title>
+  <style>
+    /* Reset & CSS Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header / Hero Section */
+    header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 4rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--card-bg);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .skill-badge {
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid #334155;
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .project-card .tags {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .project-card a {
+      display: inline-block;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      background-color: var(--card-bg);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      transition: background-color 0.2s ease;
+    }
+    .contact-links a:hover {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--card-bg);
+    }
+  </style>
 </head>
 <body>
-    <h1>Halo, saya Kafa Pajar 👋</h1>
-    <p>Pelajar SMK jurusan RPL.</p>
 
-    <h2>Tentang Saya</h2>
-    <p>Saya sedang belajar pemrograman dan ingin menjadi Web Developer.</p>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Halo, Saya Kafa Pajar 👋</h1>
+      <p>Junior Web Developer | Frontend & Backend Enthusiast</p>
+    </header>
 
-    <h2>Kontak</h2>
-    <p>Email: kafapajar8@gmail.com</p>
+    <!-- Tentang Saya -->
+    <section id="about">
+      <h2>Saya adalah seorang siswa di SMK Nashirul Huda yang ingin mengembangkan diri</h2>
+      <p>
+        Saya seorang pengembang web yang berfokus pada pembuatan aplikasi web fungsional, responsif, dan mudah digunakan. Saya senang menyelesaikan masalah logika serta terus mempelajari teknologi pengembangan web terbaru.
+      </p>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="skills">
+      <h2>Keahlian</h2>
+      <div class="skills-grid">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">PHP</span>
+        <span class="skill-badge">TypeScript</span>
+        <span class="skill-badge">Git & GitHub</span>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="projects">
+      <h2>Proyek Terpopuler</h2>
+      <div class="projects-grid">
+        
+        <!-- Proyek 1 -->
+        <div class="project-card">
+          <h3>Sistem Toko UMKM & Status Otomatis</h3>
+          <p>Aplikasi web interaktif untuk pemilik toko lokal dengan fitur indikator jam operasional buka/tutup otomatis berbasis JavaScript.</p>
+          <div class="tags">HTML • CSS • JavaScript</div>
+          <a href="#" target="_blank">Lihat Kode / Demo &rarr;</a>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="project-card">
+          <h3>Web Landing Page Komunitas</h3>
+          <p>Desain responsif penuh untuk platform komunitas lokal dengan navigasi cepat dan tampilan modern.</p>
+          <div class="tags">HTML • CSS • Responsive Design</div>
+          <a href="#" target="_blank">Lihat Kode / Demo &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact">
+      <h2>Hubungi Saya</h2>
+      <div class="contact-links">
+        <a href="mailto:email@domain.com">📧 Email</a>
+        <a href="https://github.com/username-anda" target="_blank">💻 GitHub</a>
+        <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Portofolio Saya. Dibuat dengan HTML & CSS.</p>
+    </footer>
+  </div>
+
 </body>
 </html>
