@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Kafa Pajar, pelajar dan junior web developer.">
-    <title>Kafa Pajar | Web Developer</title>
+    <title>Kafa Pajar | Junior Web Developer</title>
+    <meta name="description" content="Portofolio Kafa Pajar, pelajar yang membuat game browser dan belajar web development dengan HTML, CSS, JavaScript, dan PHP.">
+    <meta property="og:title" content="Kafa Pajar | Junior Web Developer">
+    <meta property="og:description" content="Game browser dan project web buatan Kafa Pajar.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050816'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='800' fill='%2338bdf8' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 
     <style>
-        /* =========================
-           1. RESET & VARIABEL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        /* 1. RESET & VARIABEL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         :root {
             --bg: #050816;
@@ -29,7 +23,6 @@
             --muted: #94a3b8;
             --blue: #38bdf8;
             --purple: #8b5cf6;
-            --gradient: linear-gradient(135deg, var(--blue), var(--purple));
         }
 
         body {
@@ -43,470 +36,194 @@
             line-height: 1.7;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        a:focus-visible {
-            outline: 2px solid var(--blue);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-
-        .container {
-            width: min(1100px, 90%);
-            margin: auto;
-        }
+        a { color: inherit; text-decoration: none; }
+        a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+        .container { width: min(1100px, 90%); margin: auto; }
 
 
-        /* =========================
-           2. NAVBAR
-        ========================= */
-
+        /* 2. NAVBAR */
         nav {
-            position: fixed;
-            top: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(1050px, 90%);
-            padding: 14px 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+            width: min(1050px, 90%); padding: 14px 22px;
+            display: flex; justify-content: space-between; align-items: center;
             background: rgba(5, 8, 22, .72);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border); border-radius: 18px;
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
             z-index: 1000;
         }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-        }
-
-        .logo span {
-            color: var(--blue);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: .9rem;
-            transition: color .3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
+        .logo { font-size: 1.4rem; font-weight: 800; }
+        .logo span { color: var(--blue); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: .9rem; transition: color .3s; }
+        .nav-links a:hover { color: var(--blue); }
 
 
-        /* =========================
-           3. HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            color: var(--blue);
-            font-weight: 700;
-            letter-spacing: 4px;
-            font-size: .85rem;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 7vw, 5.8rem);
-            line-height: 1;
-            margin-bottom: 25px;
-        }
+        /* 3. HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; }
+        .eyebrow { color: var(--blue); font-weight: 700; letter-spacing: 4px; font-size: .85rem; margin-bottom: 15px; }
+        .hero h1 { font-size: clamp(3rem, 7vw, 5.8rem); line-height: 1; margin-bottom: 25px; }
 
         .gradient-text {
             background: linear-gradient(90deg, var(--blue), var(--purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
 
-        .hero-description {
-            max-width: 620px;
-            color: var(--muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
+        .hero-description { max-width: 620px; color: var(--muted); font-size: 1.05rem; margin-bottom: 30px; }
+        .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
         .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 12px;
-            font-weight: 700;
-            border: 1px solid var(--border);
-            transition: transform .3s;
+            display: inline-block; padding: 13px 22px; border-radius: 12px;
+            font-weight: 700; border: 1px solid var(--border); transition: transform .3s;
         }
-
-        .btn:hover {
-            transform: translateY(-4px);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--blue), #6366f1);
-            color: #020617;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, .04);
-        }
+        .btn:hover { transform: translateY(-4px); }
+        .btn-primary { background: linear-gradient(135deg, var(--blue), #6366f1); color: #020617; }
+        .btn-secondary { background: rgba(255, 255, 255, .04); }
 
 
-        /* =========================
-           4. FOTO PROFIL
-        ========================= */
-
-        .profile-area {
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
+        /* 4. FOTO PROFIL */
+        .profile-area { display: flex; justify-content: center; position: relative; }
 
         .profile-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 280px;
-            height: 280px;
-            transform: translate(-50%, -50%);
+            position: absolute; top: 50%; left: 50%;
+            width: 280px; height: 280px; transform: translate(-50%, -50%);
             border-radius: 50%;
-            background: var(--gradient);
-            filter: blur(80px);
-            opacity: .35;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            filter: blur(80px); opacity: .35;
         }
 
-        .profile-wrap {
-            position: relative;
-        }
+        .profile-wrap { position: relative; }
 
         .profile-card {
-            position: relative;
-            width: 310px;
-            height: 400px;
-            padding: 10px;
+            position: relative; width: 310px; height: 400px; padding: 10px;
             border-radius: 30px;
             background: linear-gradient(145deg, var(--blue), var(--purple));
-            transform: rotate(3deg);
-            transition: transform .5s;
+            transform: rotate(3deg); transition: transform .5s;
         }
-
-        .profile-card:hover {
-            transform: rotate(0deg) translateY(-8px);
-        }
-
+        .profile-card:hover { transform: rotate(0deg) translateY(-8px); }
         .profile-card img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 23px;
-            background: #111827;
+            display: block; width: 100%; height: 100%;
+            object-fit: cover; border-radius: 23px; background: #111827;
         }
 
-        /* Label melayang di sekitar foto */
         .kafa-tag {
-            position: absolute;
-            padding: 6px 14px;
-            border-radius: 20px;
-            background: rgba(11, 18, 36, .85);
-            border: 1px solid var(--blue);
-            color: var(--white);
-            font-size: .8rem;
-            font-weight: 600;
-            white-space: nowrap;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            position: absolute; padding: 6px 14px; border-radius: 20px;
+            background: rgba(11, 18, 36, .85); border: 1px solid var(--blue);
+            font-size: .8rem; font-weight: 600; white-space: nowrap;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
-            animation: float 4s ease-in-out infinite;
-            z-index: 10;
+            animation: float 4s ease-in-out infinite; z-index: 10;
         }
-
-        .tag-1 { top: -10px;  left: -20px;  animation-delay: 0s; }
-        .tag-2 { top: 40%;    right: -35px; animation-delay: 1s; }
+        .tag-1 { top: -10px; left: -20px; }
+        .tag-2 { top: 40%; right: -35px; animation-delay: 1s; }
         .tag-3 { bottom: 10px; left: -25px; animation-delay: 2s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50%      { transform: translateY(-10px) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
         }
 
 
-        /* =========================
-           5. SECTION UMUM
-        ========================= */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-title {
-            margin-bottom: 45px;
-        }
-
-        .section-title small {
-            color: var(--blue);
-            letter-spacing: 3px;
-            font-weight: 700;
-        }
-
-        .section-title h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-top: 8px;
-        }
-
-        .section-title p {
-            color: var(--muted);
-            max-width: 600px;
-        }
+        /* 5. SECTION UMUM */
+        section { padding: 110px 0; }
+        .section-title { margin-bottom: 45px; }
+        .section-title small { color: var(--blue); letter-spacing: 3px; font-weight: 700; }
+        .section-title h2 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 8px; }
+        .section-title p { color: var(--muted); max-width: 600px; }
 
 
-        /* =========================
-           6. ABOUT & STATS
-        ========================= */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
+        /* 6. ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         .glass {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 20px; padding: 30px;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
         }
-
-        .glass h3 {
-            margin-bottom: 12px;
-        }
-
-        .glass p {
-            color: var(--muted);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 25px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 2rem;
-            color: var(--blue);
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: .85rem;
-        }
+        .glass h3 { margin-bottom: 12px; }
+        .glass p { color: var(--muted); }
 
 
-        /* =========================
-           7. SKILLS
-        ========================= */
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
+        /* 7. SKILLS */
+        .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
         .skill {
-            padding: 25px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 18px;
+            padding: 25px; border: 1px solid var(--border);
+            background: var(--card); border-radius: 18px;
             transition: transform .3s, border-color .3s;
         }
-
-        .skill:hover {
-            transform: translateY(-6px);
-            border-color: var(--blue);
-        }
-
-        .skill-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .skill h3 {
-            margin-bottom: 6px;
-        }
-
-        .skill p {
-            color: var(--muted);
-            font-size: .9rem;
-        }
+        .skill:hover { transform: translateY(-6px); border-color: var(--blue); }
+        .skill-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .skill h3 { font-size: 1.1rem; }
+        .level { font-size: .72rem; color: var(--blue); border: 1px solid rgba(56, 189, 248, .25); border-radius: 20px; padding: 2px 10px; white-space: nowrap; }
+        .skill p { color: var(--muted); font-size: .9rem; }
 
 
-        /* =========================
-           8. PROJECTS
-        ========================= */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
+        /* 8. PROJECTS */
+        .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 
         .project {
-            position: relative;
-            overflow: hidden;
-            padding: 30px;
-            min-height: 250px;
-            border-radius: 22px;
-            border: 1px solid var(--border);
+            position: relative; overflow: hidden; padding: 30px;
+            border-radius: 22px; border: 1px solid var(--border);
             background: linear-gradient(145deg, rgba(56, 189, 248, .08), rgba(139, 92, 246, .06));
         }
-
         .project::after {
-            content: "";
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            right: -70px;
-            bottom: -70px;
-            border-radius: 50%;
-            background: var(--purple);
-            filter: blur(70px);
-            opacity: .25;
-            pointer-events: none;
+            content: ""; position: absolute; width: 150px; height: 150px;
+            right: -70px; bottom: -70px; border-radius: 50%;
+            background: var(--purple); filter: blur(70px); opacity: .25; pointer-events: none;
         }
 
-        .project-number {
-            color: var(--blue);
-            font-weight: 800;
-            font-size: .8rem;
-            letter-spacing: 2px;
+        .project-top { display: flex; align-items: center; gap: 20px; margin-bottom: 22px; }
+
+        /* Logo game = tombol untuk memainkan */
+        .game-logo {
+            position: relative; flex: none; width: 96px; height: 96px;
+            border-radius: 22px; overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+        }
+        .game-logo svg { display: block; width: 100%; height: 100%; }
+        .game-logo:hover { transform: translateY(-4px) scale(1.04); border-color: var(--blue); box-shadow: 0 14px 34px rgba(56, 189, 248, .25); }
+
+        .play-badge {
+            position: absolute; right: 6px; bottom: 6px;
+            width: 26px; height: 26px; border-radius: 50%;
+            display: grid; place-items: center;
+            background: rgba(5, 8, 22, .8); border: 1px solid var(--blue);
+            color: var(--blue); font-size: .65rem; padding-left: 2px;
         }
 
-        .project h3 {
-            font-size: 1.4rem;
-            margin: 18px 0 10px;
-        }
+        .project-kind { color: var(--blue); font-weight: 700; font-size: .78rem; letter-spacing: 2px; }
+        .project h3 { font-size: 1.35rem; line-height: 1.25; margin-top: 4px; }
+        .project p { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
+        .project .note { font-size: .82rem; margin-bottom: 18px; }
 
-        .project p {
-            color: var(--muted);
-            font-size: .92rem;
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            color: var(--blue);
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .tag {
-            padding: 5px 10px;
-            border-radius: 20px;
-            background: rgba(56, 189, 248, .08);
-            border: 1px solid rgba(56, 189, 248, .18);
-            color: var(--blue);
-            font-size: .75rem;
+            padding: 5px 10px; border-radius: 20px;
+            background: rgba(56, 189, 248, .08); border: 1px solid rgba(56, 189, 248, .18);
+            color: var(--blue); font-size: .75rem;
         }
 
 
-        /* =========================
-           9. CONTACT & FOOTER
-        ========================= */
-
+        /* 9. CONTACT & FOOTER */
         .contact {
-            text-align: center;
-            padding: 70px 25px;
-            border-radius: 28px;
+            text-align: center; padding: 70px 25px; border-radius: 28px;
             border: 1px solid var(--border);
             background: linear-gradient(135deg, rgba(56, 189, 248, .08), rgba(139, 92, 246, .10));
         }
-
-        .contact h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 12px;
-        }
-
-        .contact p {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+        .contact h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 12px; }
+        .contact p { color: var(--muted); margin-bottom: 25px; }
+        .contact-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
 
         footer {
-            text-align: center;
-            padding: 35px 15px;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
-            font-size: .85rem;
+            text-align: center; padding: 35px 15px; color: var(--muted);
+            border-top: 1px solid var(--border); font-size: .85rem;
         }
 
 
-        /* =========================
-           10. ANIMASI MUNCUL
-        ========================= */
-
-        /* Hanya aktif jika JavaScript berjalan */
-        .js .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .js .reveal.active {
-            opacity: 1;
-            transform: none;
-        }
+        /* 10. ANIMASI MUNCUL (hanya jika JavaScript aktif) */
+        .js .reveal { opacity: 0; transform: translateY(35px); transition: opacity 1s ease, transform 1s ease; }
+        .js .reveal.active { opacity: 1; transform: none; }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -515,39 +232,18 @@
         }
 
 
-        /* =========================
-           11. RESPONSIF
-        ========================= */
-
+        /* 11. RESPONSIF */
         @media (max-width: 800px) {
-            nav { top: 10px; }
-            .nav-links { display: none; }
-
+            nav { top: 10px; padding: 12px 16px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: .82rem; }
             .hero { padding-top: 130px; }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 45px;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 45px; }
+            .hero-description { margin-left: auto; margin-right: auto; }
             .buttons { justify-content: center; }
             .profile-area { order: -1; }
-
-            .profile-card {
-                width: 245px;
-                height: 320px;
-            }
-
-            .tag-1 { left: -10px; }
-            .tag-2 { right: -10px; }
-            .tag-3 { left: -10px; }
-
+            .profile-card { width: 245px; height: 320px; }
+            .tag-1 { left: -10px; } .tag-2 { right: -10px; } .tag-3 { left: -10px; }
             .about-grid { grid-template-columns: 1fr; }
             .skills { grid-template-columns: 1fr 1fr; }
             .projects { grid-template-columns: 1fr; }
@@ -555,16 +251,11 @@
 
         @media (max-width: 500px) {
             section { padding: 80px 0; }
-
             .skills { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr; }
-
-            .profile-card {
-                width: 220px;
-                height: 290px;
-            }
-
+            .profile-card { width: 220px; height: 290px; }
             .hero h1 { font-size: 3rem; }
+            .logo { font-size: 1.2rem; }
+            .nav-links { gap: 10px; }
         }
     </style>
 </head>
@@ -572,13 +263,9 @@
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR -->
     <nav aria-label="Navigasi utama">
         <a href="#" class="logo">Kafa<span>.</span></a>
-
         <ul class="nav-links">
             <li><a href="#about">Tentang</a></li>
             <li><a href="#skills">Keahlian</a></li>
@@ -588,10 +275,7 @@
     </nav>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- HERO -->
     <header class="hero">
         <div class="container hero-grid">
 
@@ -604,10 +288,9 @@
                 </h1>
 
                 <p class="hero-description">
-                    Saya seorang pelajar yang sedang membangun kemampuan di bidang
-                    web development, frontend, backend, dan teknologi digital.
-                    Saya suka mempelajari hal baru dan mengubah ide menjadi
-                    sesuatu yang bisa digunakan.
+                    Saya pelajar yang membuat game kecil di browser dan belajar
+                    membangun website dengan HTML, CSS, JavaScript, dan PHP.
+                    Semua project di bawah ini bisa langsung dimainkan.
                 </p>
 
                 <div class="buttons">
@@ -616,19 +299,19 @@
                 </div>
             </div>
 
-
             <div class="profile-area reveal">
                 <div class="profile-glow"></div>
-
                 <div class="profile-wrap">
                     <div class="kafa-tag tag-1">Pelajar</div>
-                    <div class="kafa-tag tag-2">18 Tahun</div>
-                    <div class="kafa-tag tag-3">Single😏</div>
+                    <div class="kafa-tag tag-2">Frontend</div>
+                    <div class="kafa-tag tag-3">Belajar PHP</div>
 
                     <div class="profile-card">
+                        <!-- Disarankan: unduh foto ini dan simpan di folder website, misalnya foto.png -->
                         <img
                             src="https://i.ibb.co.com/QFLJj1By/file-000000009a0c81fa819e798c8358c702.png"
                             alt="Foto Kafa Pajar"
+                            width="290" height="380"
                         >
                     </div>
                 </div>
@@ -640,10 +323,7 @@
 
     <main>
 
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
+        <!-- ABOUT -->
         <section id="about">
             <div class="container">
 
@@ -653,43 +333,23 @@
                 </div>
 
                 <div class="about-grid">
-
                     <div class="glass reveal">
-                        <h3>Pelajar &amp; Web Developer</h3>
+                        <h3>Yang sedang saya kerjakan</h3>
                         <p>
-                            Saya adalah seorang siswa yang tertarik dengan dunia
-                            teknologi dan pengembangan website. Saat ini saya terus
-                            mengembangkan kemampuan dalam membuat website yang
-                            menarik, responsif, dan mudah digunakan.
+                            Saya membuat game berbasis browser, dari teka-teki sampai
+                            game horor-misteri dengan kontrol sentuh dan musik buatan
+                            sendiri. Di sela itu saya belajar PHP dan database untuk
+                            sisi backend.
                         </p>
                     </div>
 
                     <div class="glass reveal">
-                        <h3>Tujuan Saya</h3>
+                        <h3>Tujuan saya</h3>
                         <p>
-                            Saya ingin terus meningkatkan kemampuan programming,
-                            membangun berbagai project, serta mendapatkan
-                            pengalaman yang dapat membantu saya berkembang di
-                            dunia teknologi.
+                            Menambah project yang lengkap, dari tampilan sampai
+                            penyimpanan data, dan memperdalam JavaScript serta
+                            TypeScript supaya kode saya lebih rapi dan mudah dirawat.
                         </p>
-                    </div>
-
-                </div>
-
-                <div class="stats">
-                    <div class="glass stat reveal">
-                        <strong>6+</strong>
-                        <span>Teknologi Dipelajari</span>
-                    </div>
-
-                    <div class="glass stat reveal">
-                        <strong>2+</strong>
-                        <span>Project</span>
-                    </div>
-
-                    <div class="glass stat reveal">
-                        <strong>∞</strong>
-                        <span>Hal untuk Dipelajari</span>
                     </div>
                 </div>
 
@@ -697,58 +357,46 @@
         </section>
 
 
-        <!-- =========================
-             SKILLS
-        ========================== -->
-
+        <!-- SKILLS -->
         <section id="skills">
             <div class="container">
 
                 <div class="section-title reveal">
                     <small>MY SKILLS</small>
                     <h2>Keahlian Saya</h2>
-                    <p>
-                        Beberapa teknologi yang sedang saya pelajari
-                        dan gunakan dalam project.
-                    </p>
+                    <p>Level saya tulis apa adanya, lengkap dengan tempat saya memakainya.</p>
                 </div>
 
                 <div class="skills">
 
                     <div class="skill reveal">
-                        <div class="skill-icon">🌐</div>
-                        <h3>HTML5</h3>
-                        <p>Membuat struktur website yang rapi dan semantik.</p>
+                        <div class="skill-head"><h3>HTML5</h3><span class="level">Dipakai di project</span></div>
+                        <p>Struktur halaman dan elemen canvas untuk kedua game.</p>
                     </div>
 
                     <div class="skill reveal">
-                        <div class="skill-icon">🎨</div>
-                        <h3>CSS3</h3>
-                        <p>Membuat tampilan website responsif dan menarik.</p>
+                        <div class="skill-head"><h3>CSS3</h3><span class="level">Dipakai di project</span></div>
+                        <p>Tata letak responsif, termasuk tombol sentuh di layar ponsel.</p>
                     </div>
 
                     <div class="skill reveal">
-                        <div class="skill-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                        <p>Membuat website menjadi interaktif dan dinamis.</p>
+                        <div class="skill-head"><h3>JavaScript</h3><span class="level">Dipakai di project</span></div>
+                        <p>Logika game, penyimpanan progres, dan suara dengan Web Audio.</p>
                     </div>
 
                     <div class="skill reveal">
-                        <div class="skill-icon">🐘</div>
-                        <h3>PHP</h3>
-                        <p>Mempelajari pengembangan aplikasi web dari sisi backend.</p>
+                        <div class="skill-head"><h3>PHP</h3><span class="level">Dasar</span></div>
+                        <p>Belajar membuat sistem login dan register dengan database MariaDB.</p>
                     </div>
 
                     <div class="skill reveal">
-                        <div class="skill-icon">📘</div>
-                        <h3>TypeScript</h3>
-                        <p>Mengenal pengembangan JavaScript dengan sistem tipe.</p>
+                        <div class="skill-head"><h3>TypeScript</h3><span class="level">Sedang belajar</span></div>
+                        <p>Baru mengenal sistem tipe, belum dipakai di project.</p>
                     </div>
 
                     <div class="skill reveal">
-                        <div class="skill-icon">🔧</div>
-                        <h3>Git &amp; GitHub</h3>
-                        <p>Mengelola kode dan menyimpan project menggunakan Git.</p>
+                        <div class="skill-head"><h3>Git &amp; GitHub</h3><span class="level">Dasar</span></div>
+                        <p>Menyimpan dan menayangkan project lewat GitHub Pages.</p>
                     </div>
 
                 </div>
@@ -757,76 +405,110 @@
         </section>
 
 
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
+        <!-- PROJECTS -->
         <section id="projects">
             <div class="container">
 
                 <div class="section-title reveal">
                     <small>MY WORK</small>
                     <h2>Project Pilihan</h2>
-                    <p>
-                        Beberapa project yang pernah saya buat
-                        atau sedang saya kembangkan.
-                    </p>
+                    <p>Ketuk logo game untuk memainkannya di tab baru.</p>
                 </div>
 
                 <div class="projects">
 
+                    <!-- PROJECT: Game Teka Teki -->
                     <article class="project reveal">
-                        <div class="project-number">PROJECT 01</div>
-                        <h3>Game Teka Teki</h3>
-                        <p>
-                            Game teka-teki yang bisa dimainkan langsung di browser.
-                            Klik 👉
-                            <a
-                                class="project-link"
-                                href="https://kafapajar.github.io/puzzleGame/"
-                                target="_blank"
-                                rel="noopener"
-                            >Mainkan</a>
-                        </p>
+                        <div class="project-top">
+
+                            <a class="game-logo"
+                               href="https://kafapajar.github.io/puzzleGame/"
+                               target="_blank" rel="noopener"
+                               aria-label="Mainkan Game Teka Teki" title="Mainkan Game Teka Teki">
+                                <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/>
+                                        </linearGradient>
+                                        <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#c084fc"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="96" height="96" fill="#0b1224"/>
+                                    <rect x="52" y="30" width="28" height="36" rx="5" fill="url(#gB)"/>
+                                    <circle cx="52" cy="48" r="9" fill="#0b1224"/>
+                                    <rect x="16" y="30" width="34" height="36" rx="5" fill="url(#gA)"/>
+                                    <circle cx="52" cy="48" r="7" fill="url(#gA)"/>
+                                    <rect x="36" y="70" width="24" height="5" rx="2.5" fill="#38bdf8" opacity=".35"/>
+                                </svg>
+                                <span class="play-badge" aria-hidden="true">▶</span>
+                            </a>
+
+                            <div>
+                                <div class="project-kind">GAME PUZZLE</div>
+                                <h3>Game Teka Teki</h3>
+                            </div>
+                        </div>
+
+                        <p>Game teka-teki yang langsung bisa dimainkan di browser, di komputer maupun ponsel.</p>
+
                         <div class="tags">
-                            <span class="tag">Game</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
+                            <span class="tag">GitHub Pages</span>
                         </div>
                     </article>
 
-                    <article class="project reveal">
-                        <div class="project-number">PROJECT 02</div>
-                        <h3>Eksperimen Web dengan Syntax</h3>
-                        <p>Belum ada projek nyata karena masih bereksperimen.</p>
-                        <div class="tags">
-                            <span class="tag">Eksperimen</span>
-                            <span class="tag">Learning</span>
-                            <span class="tag">Trial and Error</span>
-                        </div>
-                    </article>
 
+                    <!-- PROJECT: Rumah di Balik Lampu Padam -->
                     <article class="project reveal">
-                        <div class="project-number">PROJECT 03</div>
-                        <h3>Eksperimen Web</h3>
+                        <div class="project-top">
+
+                            <a class="game-logo"
+                               href="rumah-lampu-padam.html"
+                               target="_blank" rel="noopener"
+                               aria-label="Mainkan Rumah di Balik Lampu Padam" title="Mainkan Rumah di Balik Lampu Padam">
+                                <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
+                                    <defs>
+                                        <radialGradient id="gGlow" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0" stop-color="#ffd877" stop-opacity=".55"/>
+                                            <stop offset="1" stop-color="#ffd877" stop-opacity="0"/>
+                                        </radialGradient>
+                                    </defs>
+                                    <rect width="96" height="96" fill="#070a12"/>
+                                    <circle cx="74" cy="20" r="7" fill="#d8e4f5" opacity=".85"/>
+                                    <circle cx="77" cy="18" r="6.5" fill="#070a12"/>
+                                    <circle cx="36" cy="58" r="22" fill="url(#gGlow)"/>
+                                    <path d="M14 46 L48 20 L82 46 V80 H14 Z" fill="#141c2e" stroke="#3a4a6b" stroke-width="2" stroke-linejoin="round"/>
+                                    <rect x="62" y="24" width="8" height="14" fill="#141c2e" stroke="#3a4a6b" stroke-width="2"/>
+                                    <rect x="26" y="52" width="14" height="14" rx="1.5" fill="#ffd877"/>
+                                    <path d="M33 52 V66 M26 59 H40" stroke="#141c2e" stroke-width="1.6"/>
+                                    <rect x="56" y="52" width="14" height="14" rx="1.5" fill="#0b101c" stroke="#3a4a6b" stroke-width="1.6"/>
+                                    <rect x="42" y="62" width="10" height="18" fill="#b3262e"/>
+                                </svg>
+                                <span class="play-badge" aria-hidden="true">▶</span>
+                            </a>
+
+                            <div>
+                                <div class="project-kind">GAME HOROR-MISTERI</div>
+                                <h3>Rumah di Balik Lampu Padam</h3>
+                            </div>
+                        </div>
+
                         <p>
-                            Berbagai eksperimen kecil untuk mempelajari teknologi
-                            baru, animasi, UI, dan logika programming.
+                            Sera (17) pulang ke rumah masa kecilnya, tetapi foto, kalender,
+                            dan ingatannya tidak cocok satu sama lain. Jelajahi rumah,
+                            periksa benda, dan catat petunjuk di jurnal.
                         </p>
-                        <div class="tags">
-                            <span class="tag">Experiment</span>
-                            <span class="tag">Learning</span>
-                        </div>
-                    </article>
+                        <p class="note">Versi MVP. Mainkan dengan ponsel dalam posisi landscape.</p>
 
-                    <article class="project reveal">
-                        <div class="project-number">PROJECT 04</div>
-                        <h3>Project Berikutnya</h3>
-                        <p>
-                            Ruang untuk project baru yang akan saya buat ketika
-                            kemampuan dan pengalaman saya bertambah.
-                        </p>
                         <div class="tags">
-                            <span class="tag">Coming Soon</span>
+                            <span class="tag">Canvas</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Web Audio</span>
+                            <span class="tag">Kontrol sentuh</span>
+                            <span class="tag">Simpan progres</span>
                         </div>
                     </article>
 
@@ -836,29 +518,17 @@
         </section>
 
 
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
+        <!-- CONTACT -->
         <section id="contact">
             <div class="container">
 
                 <div class="contact reveal">
                     <h2>Mari terhubung.</h2>
-                    <p>
-                        Punya project atau ingin berdiskusi tentang teknologi?
-                        Hubungi saya.
-                    </p>
+                    <p>Punya masukan untuk game saya atau ingin berdiskusi tentang teknologi? Hubungi saya.</p>
 
                     <div class="contact-buttons">
                         <a href="mailto:kafapajar8@gmail.com" class="btn btn-primary">📧 Email</a>
-
-                        <a
-                            href="https://github.com/KafaPajar"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-secondary"
-                        >💻 GitHub</a>
+                        <a href="https://github.com/KafaPajar" target="_blank" rel="noopener" class="btn btn-secondary">💻 GitHub</a>
                     </div>
                 </div>
 
@@ -868,18 +538,11 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Kafa Pajar. Built with HTML, CSS &amp; JavaScript.</p>
+        <p>© 2026 Kafa Pajar. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
     </footer>
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
 
     <script>
         document.documentElement.classList.add("js");
